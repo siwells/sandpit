@@ -1,4 +1,5 @@
 *.py[co]
+*.beam
 
 # Packages
 *.egg
