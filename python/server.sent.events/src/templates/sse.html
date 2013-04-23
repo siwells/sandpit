@@ -13,11 +13,20 @@
 
                     })
         </script>
+        <script>
+              $(document).ready(function(){
+                $('#eventCancelButton').click(function(){
+                   source.close();
+                });
+              });
+        </script>
     </head>
 
     <body>
 
         <h2>Demo</h2>
+        
+        <input type="button" id="eventCancelButton" value="Cancel Events" />
 
         <ul id="output">
         
