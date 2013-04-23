@@ -5,8 +5,8 @@
         <script type="text/javascript">
             $(document).ready(
                     function() {
-                        sse = new EventSource('/my_event_source');
-                        sse.onmessage = function(message) {
+                        source = new EventSource('/my_event_source');
+                        source.onmessage = function(message) {
                             console.log('A message has arrived!');
                             $('#output').append('<li>'+message.data+'</li>');
                         }
