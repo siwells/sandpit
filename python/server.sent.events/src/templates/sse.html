@@ -7,10 +7,10 @@
                     function() {
                         source = new EventSource('/my_event_source');
                         source.onmessage = function(message) {
-                            console.log('A message has arrived!');
+                            var data = JSON.parse(message.data);
+                            console.log(data.id, data.msg);
                             $('#output').append('<li>'+message.data+'</li>');
                         }
-
                     })
         </script>
         <script>
