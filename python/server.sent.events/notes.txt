@@ -1,5 +1,6 @@
 
 RESOURCES
 =========
+* http://www.html5rocks.com/en/tutorials/eventsource/basics/
 * http://s-n.me/blog/2012/10/16/realtime-websites-with-flask/
 * http://peter-hoffmann.com/stackoverflow/12236019.html
