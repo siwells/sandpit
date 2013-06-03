@@ -7,14 +7,14 @@ To run it:
 
 1. Create a VirtualEnv & activate it:
 
-    $ virtualenv hindex.env
-    $ source hindex.env/bin/activate
+     $ virtualenv hindex.env   
+     $ source hindex.env/bin/activate
     
 2. Install pre-requisiste python libs:
     
-    $ pip install -r requirements.txt
+     $ pip install -r requirements.txt
 
 3. Run it:
     
-    $ python src/hindex/hindex.py
+     $ python src/hindex/hindex.py
 
