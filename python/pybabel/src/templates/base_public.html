@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="author" content="Simon Wells">
+
+
+    {% block head %}
+    	<title>SUPERHUB {% block title %}{% endblock %}</title>
+	{% endblock %}
+</head>
+
+<body>
+
+    {% block pagebody %}
+		{% block content %}{% endblock %}
+	{% endblock %}
+
+
+
+</body>
+</html>
+
