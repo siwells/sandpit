@@ -1,0 +1,13 @@
+
+
+Pre-requisites:
+===============
+
+    $ brew install nasm
+    $ brew install qemu
+
+
+Run:
+====
+    $ nasm boot.asm  -o bootable.bin
+    $ qemu-system-x86_64 bootable.bin
