@@ -1,0 +1,5 @@
+
+
+    $ nasm -f macho hello.asm
+    $ ld -macosx_version_min 10.7 -o hello -e mystart hello.o
+    $ ./hello
