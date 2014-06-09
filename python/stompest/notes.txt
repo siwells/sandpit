@@ -1,0 +1,7 @@
+Function to call a JMS message queue using the stompest.py library and using an RPC (request/response) communication pattern.
+
+1. Create a virtualenv, and activate it
+2. pip install stompest
+3. In the config set the host:port numbers to match your JMS broker
+4. Provide names of the request and response queues and the request content (which we assume is JSON and which is passed through directly)
+5. Return from the function is the document posted to the response queue or None
