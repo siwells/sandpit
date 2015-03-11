@@ -1,0 +1,22 @@
+1.  Create a twitter account to tweet to
+2.  Visit http://apps.twitter.com and click "Create New App"
+3.  Complete the Name, Description, & Website fields, accept the developer agreement, and click on "Create Your Twitter Application"
+4.  On the 'Detail' tab, modify the access settings to allowing reading and writing
+5.  Click on the 'Keys and Access Tokens' tab; you will need the following:
+    Consumer Key (API Key)
+    Consumer Secret (Secret Key)
+6.  Click the generate token button and note the following:
+    Access Token
+    Access Token Secret
+7.  Add the consumer key, consumer secret, access token, and access token secret to your code
+8.  Compile your code:
+    
+    $ javac -cp twitter4j-async-4.0.2.jar:twitter4j-core-4.0.2.jar:twitter4j-examples-4.0.2.jar:twitter4j-media-support-4.0.2.jar:twitter4j-stream-4.0.2.jar:. TweetTest.java
+
+9.  Run your code:
+
+    $ java -cp twitter4j-async-4.0.2.jar:twitter4j-core-4.0.2.jar:twitter4j-examples-4.0.2.jar:twitter4j-media-support-4.0.2.jar:twitter4j-stream-4.0.2.jar:. TweetTest
+
+    & get output similar to the following (if all has gone well):
+
+    > status.toString() = StatusJSONImpl{createdAt=Tue Mar 10 19:37:45 GMT 2015, id=575380035789524995, text='Testing Tweeting from code v2', source='<a href="http://www.simonwells.org" rel="nofollow">TweetTest2000</a>', isTruncated=false, inReplyToStatusId=-1, inReplyToUserId=-1, isFavorited=false, isRetweeted=false, favoriteCount=0, inReplyToScreenName='null', geoLocation=null, place=null, retweetCount=0, isPossiblySensitive=false, lang='en', contributorsIDs=[], retweetedStatus=null, userMentionEntities=[], urlEntities=[], hashtagEntities=[], mediaEntities=[], symbolEntities=[], currentUserRetweetId=-1, user=UserJSONImpl{id=430663029, name='moot_barricade', screenName='moot_barricade', location='', description='', isContributorsEnabled=false, profileImageUrl='http://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png', profileImageUrlHttps='https://abs.twimg.com/sticky/default_profile_images/default_profile_6_normal.png', isDefaultProfileImage=true, url='null', isProtected=false, followersCount=0, status=null, profileBackgroundColor='C0DEED', profileTextColor='333333', profileLinkColor='0084B4', profileSidebarFillColor='DDEEF6', profileSidebarBorderColor='C0DEED', profileUseBackgroundImage=true, isDefaultProfile=true, showAllInlineMedia=false, friendsCount=0, createdAt=Wed Dec 07 12:43:41 GMT 2011, favouritesCount=0, utcOffset=-1, timeZone='null', profileBackgroundImageUrl='http://abs.twimg.com/images/themes/theme1/bg.png', profileBackgroundImageUrlHttps='https://abs.twimg.com/images/themes/theme1/bg.png', profileBackgroundTiled=false, lang='en', statusesCount=2, isGeoEnabled=false, isVerified=false, translator=false, listedCount=0, isFollowRequestSent=false}}
