@@ -1,6 +1,7 @@
 *.py[co]
 *.beam
 *.class
+*.swp
 
 .DS_Store
 
