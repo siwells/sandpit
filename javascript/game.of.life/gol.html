@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conway's Game of Life</title>
+    <script type="text/javascript">
+        var width = null;
+        var height = null;
+        var black = "rgb(0,0,0)";
+        var white = "rgb(256,256,256)";
+        var cellsize = 1;
+        var world = null;
+        var mirror = null;
+
+        function createWorld(rows)
+        {
+            var world=[];
+            for(var i=0; i<rows; ++i)
+            {
+                world[i] = [];
+            }
+            return world;
+        }
+
+        function drawWorld()
+        {
+            var canvas = document.getElementById('gol');
+            if (canvas.getContext)
+            {
+                ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, 400, 400);
+                
+            
+                for(x=0; x<width; x++)
+                {
+                    for(y=0; y<height; y++)
+                    {
+                        if(world[x][y] === 0)
+                            ctx.fillStyle = white
+                        else
+                            ctx.fillStyle = black;
+                        ctx.fillRect(x,y,cellsize,cellsize);
+                    }
+                }
+            }
+        }
+
+        function processWorld()
+        {
+            for(i=1; i<width-1; i++)
+            {
+                for(j=1; j<height-1; j++)
+                {
+                    var totalCells = 0;
+                    totalCells += world[i - 1][j - 1]; 
+                    totalCells += world[i - 1][j]; 
+                    totalCells += world[i - 1][j + 1];
+
+                    totalCells += world[i][j - 1]; 
+                    totalCells += world[i][j + 1]; 
+
+                    totalCells += world[i + 1][j - 1]; 
+                    totalCells += world[i + 1][j]; 
+                    totalCells += world[i + 1][j + 1]; 
+
+    
+                    
+                    if (world[i][j] === 0)
+                    {
+                        switch (totalCells)
+                        {
+                            case 3:
+                                mirror[i][j] = 1; 
+                                break;
+                            default:
+                                mirror[i][j] = 0; 
+                        }
+                    } else if (world[i][j] === 1)
+                    { 
+                        switch (totalCells) {
+                            case 0:
+                            case 1:
+                                mirror[i][j] = 0; 
+                                break;
+                            case 2:
+                            case 3:
+                                mirror[i][j] = 1; 
+                                break;
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                                mirror[i][j] = 0; 
+                                break;
+                            default:
+                                mirror[i][j] = 0; 
+                        }
+                    }
+                }
+            }
+            for (var i = 0; i < width; i++) 
+            { 
+                for (var j = 0; j < height; j++) 
+                { 
+                    world[i][j] = mirror[i][j];
+                }
+            }
+        }
+
+        function init()
+        {
+            var canvas = document.getElementById('gol');
+            width = canvas.width;
+            height = canvas.height;
+
+            world = createWorld(width);
+            mirror = createWorld(width);
+            
+            for(i=0; i<width; i++)
+            {
+                for(j=0; j<height; j++)
+                {
+                    var state = Math.floor(Math.random() * 2);
+                    if(state == 0)
+                        world[i][j] = 1;
+                    else
+                        world[i][j] = 0;
+                }
+            }
+        }
+
+        function draw()
+        {
+            drawWorld();
+            processWorld();
+     //       requestAnimationFrame(draw);
+        }
+
+        function main()
+        {
+            init();
+            draw();
+        }
+
+    </script>
+    <style type="text/css">
+      canvas { border: 1px solid black; display: inline }
+      #canvas-container { width: 100%; text-align: center; }
+    </style>
+  </head>
+  <body onload="main();">
+    <div id="canvas-container">
+        <canvas id="gol" width="800" height="600"></canvas>
+    </div>
+  </body>
+</html>
