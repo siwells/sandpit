@@ -3,7 +3,7 @@ Flask==0.10.1
 Flask-Babel==0.8
 Jinja2==2.7
 MarkupSafe==0.18
-Werkzeug==0.9.1
+Werkzeug==0.15.3
 itsdangerous==0.22
 pytz==2013b
 speaklater==1.3
