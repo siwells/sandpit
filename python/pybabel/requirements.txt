@@ -1,7 +1,7 @@
 Babel==0.9.6
 Flask==0.10.1
 Flask-Babel==0.8
-Jinja2==2.7
+Jinja2==2.10.1
 MarkupSafe==0.18
 Werkzeug==0.9.1
 itsdangerous==0.22
