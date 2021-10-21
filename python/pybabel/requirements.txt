@@ -1,4 +1,4 @@
-Babel==0.9.6
+Babel==2.9.1
 Flask==1.0
 Flask-Babel==0.8
 Jinja2==2.10.1
