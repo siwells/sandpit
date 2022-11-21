@@ -1,0 +1,9 @@
+play -c 5 -n synth brown vol -20dB
+play -n -n --combine merge synth brownnoise band -n 550 550
+play -n -n --combine merge synth '24:00:00' brownnoise band -n 750 750 tremolo 50 1
+play -c 2 --null synth brownnoise reverb bass 6 treble -3
+play -c 2 --null synth brownnoise reverb bass 10 treble -6
+
+play -c 2 -n synth brownnoise
+play -c 2 -n synth whitenoise
+play -c 2 -n synth pinknoise
